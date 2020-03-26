@@ -29,7 +29,7 @@ $(document).ready(function () {
     const moonTextureUrl = 'image/planets/plutomap1k.jpg';
     const moonTexture = new THREE.TextureLoader().load(moonTextureUrl);
     const moonMaterial = new THREE.MeshPhongMaterial({ map: moonTexture });
-    
+
     let sateliteGeometry = new THREE.SphereGeometry( 0.03, 32, 32 );
     let satelite = new THREE.Mesh(sateliteGeometry, moonMaterial);
     satelite.position.set(0.35, 0, 0);
