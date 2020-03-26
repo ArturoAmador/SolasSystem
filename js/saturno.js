@@ -20,7 +20,7 @@ $(document).ready(function () {
     sunGrup.group.add(saturnGroup);
     saturnGroup.position.set(40, 0, 0);
 
-    let geometry = new THREE.SphereGeometry( 0.302, 32, 32 );
+    let geometry = new THREE.SphereGeometry( 1.7, 32, 32 );
 
     sphere = new THREE.Mesh(geometry, material);
     saturnGroup.add(sphere);
@@ -31,7 +31,7 @@ $(document).ready(function () {
         'satelites':[]
     });
 
-    let sateliteGeometry = new THREE.TorusGeometry( 0.5, 0.09, 2, 50, 6.3 );
+    let sateliteGeometry = new THREE.TorusGeometry( 2.3, 0.09, 2, 50, 6.3 );
 
     let satelite = new THREE.Mesh(sateliteGeometry, matieralRing);
     satelite.position.set(0, 0, 0);

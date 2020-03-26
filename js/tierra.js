@@ -26,7 +26,7 @@ $(document).ready(function () {
     });
 
     // satelites
-    const moonTextureUrl = 'image/planets/plutomap1k.jpg';
+    const moonTextureUrl = 'images/moon_1024.jpg';
     const moonTexture = new THREE.TextureLoader().load(moonTextureUrl);
     const moonMaterial = new THREE.MeshPhongMaterial({ map: moonTexture });
 

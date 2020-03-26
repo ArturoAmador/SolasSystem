@@ -13,7 +13,7 @@ $(document).ready(function () {
     data.group.add(mercurioGroup);
     mercurioGroup.position.set(5, 0, 0);
 
-    let geometry = new THREE.SphereGeometry( 0.07, 32, 32 );
+    let geometry = new THREE.SphereGeometry( 0.0684, 32, 32 );
 
     sphere = new THREE.Mesh(geometry, material);
     mercurioGroup.add(sphere);

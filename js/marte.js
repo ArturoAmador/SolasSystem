@@ -13,7 +13,7 @@ $(document).ready(function () {
     sunGrup.group.add(venusGroup);
     venusGroup.position.set(23, 0, 0);
 
-    let geometry = new THREE.SphereGeometry( 0.09, 32, 32 );
+    let geometry = new THREE.SphereGeometry( 0.0954, 32, 32 );
 
     sphere = new THREE.Mesh(geometry, material);
     venusGroup.add(sphere);

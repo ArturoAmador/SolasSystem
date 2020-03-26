@@ -14,7 +14,7 @@ $(document).ready(function () {
     data.group.add(venusGroup);
     venusGroup.position.set(10, 0, 0);
 
-    let geometry = new THREE.SphereGeometry( 0.17, 32, 32 );
+    let geometry = new THREE.SphereGeometry( 0.171, 32, 32 );
 
     sphere = new THREE.Mesh(geometry, material);
     venusGroup.add(sphere);

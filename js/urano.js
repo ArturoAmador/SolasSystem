@@ -3,8 +3,8 @@
 // 2.9632 miles de millones km distancia al sol
 
 $(document).ready(function () {
-    const textureUrl = 'images/planets/saturnringcolor.jpg';
-    const textureRingUrl = 'images/planets/rings/uranusringcolour.jpg';
+    const textureUrl = 'images/planets/uranusmap.jpg';
+    const textureRingUrl = 'images/planets/rings/uranusringtrans.gif';
 
     // Uranus Texture
     const texture = new THREE.TextureLoader().load(textureUrl);
@@ -20,7 +20,7 @@ $(document).ready(function () {
     sunGrup.group.add(uranoGroup);
     uranoGroup.position.set(45, 0, 0);
 
-    let geometry = new THREE.SphereGeometry( 0.302, 32, 32 );
+    let geometry = new THREE.SphereGeometry( 0.72, 32, 32 );
 
     sphere = new THREE.Mesh(geometry, material);
     uranoGroup.add(sphere);
@@ -31,7 +31,7 @@ $(document).ready(function () {
         'satelites':[]
     });
 
-    let sateliteGeometry = new THREE.TorusGeometry( 0.5, 0.09, 2, 50, 6.3 );
+    let sateliteGeometry = new THREE.TorusGeometry( 1, 0.09 , 2, 50, 6.3 );
     let satelite = new THREE.Mesh(sateliteGeometry, matieralRing);
     satelite.position.set(0, 0, 0);
     grups[7].satelites.push(satelite);          // Urano
