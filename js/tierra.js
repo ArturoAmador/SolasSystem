@@ -26,8 +26,11 @@ $(document).ready(function () {
     });
 
     // satelites
+    const moonTextureUrl = 'image/planets/plutomap1k.jpg';
+    const moonTexture = new THREE.TextureLoader().load(moonTextureUrl);
+    const moonMaterial = new THREE.MeshPhongMaterial({ map: moonTexture });
+    
     let sateliteGeometry = new THREE.SphereGeometry( 0.03, 32, 32 );
-    let moonMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
     let satelite = new THREE.Mesh(sateliteGeometry, moonMaterial);
     satelite.position.set(0.35, 0, 0);
     grups[3].satelites.push(satelite);          // Tierra
