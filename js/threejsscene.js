@@ -2,7 +2,7 @@ let renderer = null,
 canvas = null,
 scene = null,
 camera = null,
-cube = null,
+sun = null,
 sphere = null,
 cone = null,
 sphereGroup = null;
@@ -170,7 +170,7 @@ function satelite() {
 
 function remove() {
     console.log('clear');
-    $("#slider").slider({min: 0.1, max: 2, value: 1, step: 0.01, animate: false});
+    $("#slider").slider({min: 0.1, max: 5, value: 1, step: 0.01, animate: false});
     scene.children.pop();
     grups = []
 

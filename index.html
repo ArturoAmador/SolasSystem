@@ -41,15 +41,15 @@
             vec4 noise = texture2D( noiseTexture, texCoord );
 
             vec2 T1 = texCoord + vec2( 1.5, -1.5 ) * time;
-            vec2 T2 = texCoord + vec2( -0.5, 1.5 ) * time;
+            vec2 T2 = texCoord + vec2( -0.5, 2.0 ) * time;
 
-            T1.x += noise.r * 4.0;
+            T1.x += noise.r * 2.0;
             T1.y += noise.g * 4.0;
 
             T2.x += noise.g * 0.2;
             T2.y += noise.b * 0.2;
 
-            float alpha = texture2D( noiseTexture, T1 * 2.0 ).a ;//- 0.25;
+            float alpha = texture2D( noiseTexture, T1 * 2.0 ).a + 0.25;//- 0.25;
 
             vec4 color = texture2D( glowTexture, T2 );
             vec4 newColor = vec4( alpha, alpha, alpha, alpha ) + ( color * color );
@@ -113,17 +113,20 @@
                 </div>
                 <div id="slider"></div>
             </div>
-            <br>
-            <div class="col-12 m-4 text-center">
-                <button type="button" class="btn btn-dark" onclick="add()">Add</button>
-                <button type="button" class="btn btn-light" onclick="satelite()">Satelite</button>
-                <button type="button" class="btn btn-danger" onclick="remove()">Reset</button>
-            </div>
         </div>
     </div>
 
 
     <script src="js/sun.js"></script>
+    <script src="js/mercurio.js"></script>
+    <script src="js/venus.js"></script>
+    <script src="js/tierra.js"></script>
+    <script src="js/marte.js"></script>
+    <script src="js/jupiter.js"></script>
+    <script src="js/saturno.js"></script>
+    <script src="js/urano.js"></script>
+    <script src="js/neptuno.js"></script>
+    <script src="js/pluton.js"></script>
 
 
 </body>
