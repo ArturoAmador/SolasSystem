@@ -46,6 +46,17 @@ $(document).ready(function () {
     sunGroup.add( sun );
     sunGroup.position.set(0, 0, 0);
 
+
+    let sateliteGeometry = new THREE.TorusGeometry( 30, 0.1, 3, 50, 6.3 );
+    let moonMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+    let satelite = new THREE.Mesh(sateliteGeometry, moonMaterial);
+    satelite.position.set(0, 0, 0);
+    grups[0].satelites.push(satelite);          // Sol
+    sunGroup.add(satelite);
+
+
+
+
     // Now add the group to our scene
     addScene( sunGroup );
 

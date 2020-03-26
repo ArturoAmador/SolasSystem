@@ -28,7 +28,7 @@ $(document).ready(function () {
     let moonMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
     let satelite = new THREE.Mesh(sateliteGeometry, moonMaterial);
     satelite.position.set(0, 0, 0);
-    grups[7].satelites.push(satelite);          // Saturno
+    grups[7].satelites.push(satelite);          // Urano
     uranoGroup.add(satelite);
 
 });
