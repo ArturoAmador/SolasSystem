@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     var saturnGroup = new THREE.Object3D;
     sunGrup.group.add(saturnGroup);
-    saturnGroup.position.set(20, 0, 0);
+    saturnGroup.position.set(40, 0, 0);
 
     let geometry = new THREE.SphereGeometry( 0.302, 32, 32 );
 
@@ -27,7 +27,7 @@ $(document).ready(function () {
     let moonMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
     let satelite = new THREE.Mesh(sateliteGeometry, moonMaterial);
     satelite.position.set(0, 0, 0);
-    grups[4].satelites.push(satelite);          // Saturno
+    grups[6].satelites.push(satelite);          // Saturno
     saturnGroup.add(satelite);
 
 });

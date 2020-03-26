@@ -11,7 +11,7 @@ $(document).ready(function () {
 
     var uranoGroup = new THREE.Object3D;
     sunGrup.group.add(uranoGroup);
-    uranoGroup.position.set(35, 0, 0);
+    uranoGroup.position.set(45, 0, 0);
 
     let geometry = new THREE.SphereGeometry( 0.302, 32, 32 );
 
@@ -28,7 +28,7 @@ $(document).ready(function () {
     let moonMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
     let satelite = new THREE.Mesh(sateliteGeometry, moonMaterial);
     satelite.position.set(0, 0, 0);
-    grups[5].satelites.push(satelite);          // Saturno
+    grups[7].satelites.push(satelite);          // Saturno
     uranoGroup.add(satelite);
 
 });
