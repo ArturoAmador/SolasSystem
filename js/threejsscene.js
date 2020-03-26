@@ -189,9 +189,9 @@ function animate() {
         g.figure.rotation.x += angle;
         g.figure.rotation.z += angle;
         g.satelites.forEach((s) => {
-            console.log(index);
-            if (index === 6)
-                s.rotation.x += Math.PI * 2;
+            // console.log(index); 
+            if (index === 6 || index === 0)
+                s.rotation.x += angle;
             else
                 s.rotation.z += angle;
 

@@ -4,8 +4,15 @@
 
 $(document).ready(function () {
     const textureUrl = 'images/planets/saturnringcolor.jpg';
+    const textureRingUrl = 'images/planets/rings/uranusringcolour.jpg';
+
+    // Uranus Texture
     const texture = new THREE.TextureLoader().load(textureUrl);
     const material = new THREE.MeshPhongMaterial({ map: texture });
+
+    // Saturn Rings Texture
+    const textureRing  = new THREE.TextureLoader().load(textureRingUrl);
+    const matieralRing = new THREE.MeshPhongMaterial({ map : textureRing});
 
     let sunGrup = grups[0];
 
@@ -24,9 +31,8 @@ $(document).ready(function () {
         'satelites':[]
     });
 
-    let sateliteGeometry = new THREE.TorusGeometry( 0.5, 0.1, 3, 50, 6.3 );
-    let moonMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
-    let satelite = new THREE.Mesh(sateliteGeometry, moonMaterial);
+    let sateliteGeometry = new THREE.TorusGeometry( 0.5, 0.09, 2, 50, 6.3 );
+    let satelite = new THREE.Mesh(sateliteGeometry, matieralRing);
     satelite.position.set(0, 0, 0);
     grups[7].satelites.push(satelite);          // Urano
     uranoGroup.add(satelite);

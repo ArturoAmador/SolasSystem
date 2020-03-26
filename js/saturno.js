@@ -2,9 +2,17 @@
 // 11.95 más pequeño que el sol
 // 1.4969 miles de millones km distancia al sol
 $(document).ready(function () {
-    const textureUrl = 'images/planets/saturnringcolor.jpg';
+    const textureUrl = 'images/planets/saturnmap.jpg';
+    const textureRingUrl = 'images/planets/rings/saturnringcolor.jpg';
+
+    // Saturn Texture
     const texture = new THREE.TextureLoader().load(textureUrl);
     const material = new THREE.MeshPhongMaterial({ map: texture });
+
+    // Saturn Rings Texture
+    const textureRing  = new THREE.TextureLoader().load(textureRingUrl);
+    const matieralRing = new THREE.MeshPhongMaterial({ map : textureRing});
+
 
     let sunGrup = grups[0];
 
@@ -23,9 +31,9 @@ $(document).ready(function () {
         'satelites':[]
     });
 
-    let sateliteGeometry = new THREE.TorusGeometry( 0.5, 0.1, 3, 50, 6.3 );
-    let moonMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
-    let satelite = new THREE.Mesh(sateliteGeometry, moonMaterial);
+    let sateliteGeometry = new THREE.TorusGeometry( 0.5, 0.09, 2, 50, 6.3 );
+
+    let satelite = new THREE.Mesh(sateliteGeometry, matieralRing);
     satelite.position.set(0, 0, 0);
     grups[6].satelites.push(satelite);          // Saturno
     saturnGroup.add(satelite);
