@@ -184,14 +184,17 @@ function animate() {
     let fract = deltat / duration;
     let angle = Math.PI * 2 * fract;
 
-    grups.forEach((g) => {
+    grups.forEach((g, index) => {
         g.group.rotation.y -= angle / 2;
         g.figure.rotation.x += angle;
         g.figure.rotation.z += angle;
-        g.satelites.forEach((s, index) => {
-            // console.log(index);
-            s.rotation.x += angle;
-            
+        g.satelites.forEach((s) => {
+            console.log(index);
+            if (index === 6)
+                s.rotation.x += Math.PI * 2;
+            else
+                s.rotation.z += angle;
+
         });
     })
 }
