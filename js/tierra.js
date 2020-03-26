@@ -8,10 +8,10 @@ $(document).ready(function () {
     const texture = new THREE.TextureLoader().load(textureUrl);
     const material = new THREE.MeshPhongMaterial({ map: texture });
 
-    let data = grups[0];
+    let sunGrup = grups[0];        // Sol
 
     var tierraGroup = new THREE.Object3D;
-    data.group.add(tierraGroup);
+    sunGrup.group.add(tierraGroup);
     tierraGroup.position.set(14, 0, 0);
 
     let geometry = new THREE.SphereGeometry( 0.18, 32, 32 );
@@ -30,7 +30,7 @@ $(document).ready(function () {
     let moonMaterial = new THREE.MeshBasicMaterial( {color: 0xffff00} );
     let satelite = new THREE.Mesh(sateliteGeometry, moonMaterial);
     satelite.position.set(0.35, 0, 0);
-    grups[3].satelites.push(satelite);
+    grups[3].satelites.push(satelite);          // Tierra
     tierraGroup.add(satelite);
 
 });
