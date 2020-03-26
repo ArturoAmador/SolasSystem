@@ -4,8 +4,9 @@
 
 
 $(document).ready(function () {
-    const textureUrl = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/sunSurfaceMaterial.jpg';
+    const textureUrl = 'images/planets/venusmap.jpg';
     const texture = new THREE.TextureLoader().load(textureUrl);
+    const material = new THREE.MeshPhongMaterial({ map: texture });
 
     let data = grups[0];
 

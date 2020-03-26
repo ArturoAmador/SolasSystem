@@ -3,8 +3,9 @@
 // distancia del sol 57.91 millones km
 
 $(document).ready(function () {
-    const textureUrl = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/sunSurfaceMaterial.jpg';
+    const textureUrl = 'images/planets/mercurymap.jpg';
     const texture = new THREE.TextureLoader().load(textureUrl);
+    const material = new THREE.MeshPhongMaterial({ map: texture });
 
     let data = grups[0];
 
