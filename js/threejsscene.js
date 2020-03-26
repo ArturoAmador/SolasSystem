@@ -188,8 +188,10 @@ function animate() {
         g.group.rotation.y -= angle / 2;
         g.figure.rotation.x += angle;
         g.figure.rotation.z += angle;
-        g.satelites.forEach(s => {
-            s.rotation.z += angle;
+        g.satelites.forEach((s, index) => {
+            // console.log(index);
+            s.rotation.x += angle;
+            
         });
     })
 }
