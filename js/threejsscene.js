@@ -29,6 +29,7 @@ function getRandomInt(min, max) {
 
 // Add fugure to principal scene
 function addScene(item) {
+    console.log(item);
     scene.add(item)
 }
 
@@ -231,3 +232,5 @@ function createScene(canvasDom) {
     scene.add(light);
 
 }
+
+
