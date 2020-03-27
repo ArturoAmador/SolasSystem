@@ -7,6 +7,8 @@ sphere = null,
 cone = null,
 sphereGroup = null;
 
+let star;
+
 let duration = 5000; // ms
 let currentTime = Date.now();
 
@@ -219,7 +221,7 @@ function createScene(canvasDom) {
     scene = new THREE.Scene();
 
     // Set the background color
-    scene.background = new THREE.Color( 0.2, 0.2, 0.2 );
+    // scene.background = new THREE.Color( 0.2, 0.2, 0.2 );
     // scene.background = new THREE.Color( "rgb(100, 100, 100)" );
 
     // Add  a camera so we can view the scene
@@ -236,6 +238,28 @@ function createScene(canvasDom) {
     light.target.position.set(0,-2,0);
     scene.add(light);
 
+    const textureUrl = 'images/star.jpg';
+    
+    let starGeo = new THREE.Geometry();
+
+    for (let i = 0; i < 6000; i++) {
+        let star = new THREE.Vector3(
+            (Math.random() * 2 - 1) * 100,
+            (Math.random() * 2 - 1) * 100,
+            (Math.random() * 2 - 1) * 100
+        );
+        starGeo.vertices.push(star);
+    }
+    
+    let sprite = new THREE.TextureLoader().load(textureUrl);
+    let starMaterial = new THREE.PointsMaterial({
+        color: 0xffffff,
+        size: 0.2,
+        map: sprite
+    });
+
+    star = new THREE.Points(starGeo, starMaterial);
+    scene.add(star);
 }
 
 
