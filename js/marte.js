@@ -9,19 +9,36 @@ $(document).ready(function () {
 
     let sunGrup = grups[0];
 
-    var venusGroup = new THREE.Object3D;
-    sunGrup.group.add(venusGroup);
-    venusGroup.position.set(23, 0, 0);
+    var marsGroup = new THREE.Object3D;
+    sunGrup.group.add(marsGroup);
+    marsGroup.position.set(18, 0, 0);
 
     let geometry = new THREE.SphereGeometry( 0.0954, 32, 32 );
 
     sphere = new THREE.Mesh(geometry, material);
-    venusGroup.add(sphere);
+    marsGroup.add(sphere);
 
     grups.push({
-        'group':venusGroup,
+        'group':marsGroup,
         'figure':sphere,
         'satelites':[]
     });
+
+    // satelites
+    const moonTextureUrl = 'images/moon_1024.jpg';
+    const moonTexture = new THREE.TextureLoader().load(moonTextureUrl);
+    const moonMaterial = new THREE.MeshPhongMaterial({ map: moonTexture });
+    let sateliteGeometry = new THREE.SphereGeometry( 0.03, 32, 32 );
+
+
+    let satelite1 = new THREE.Mesh(sateliteGeometry, moonMaterial);
+    satelite1.position.set(0.25, 0, 0);
+    grups[4].satelites.push(satelite1);          // Marte
+    marsGroup.add(satelite1);
+
+    let satelite2 = new THREE.Mesh(sateliteGeometry, moonMaterial);
+    satelite2.position.set(-0.25, 0, 0);
+    grups[4].satelites.push(satelite2);          // Marte
+    marsGroup.add(satelite2);
 
 });
