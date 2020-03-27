@@ -47,8 +47,10 @@ $(document).ready(function () {
     sunGroup.position.set(0, 0, 0);
 
 
-    let sateliteGeometry = new THREE.TorusGeometry( 25, 3.6, 24, 200, 6.3);
-
+    let sateliteGeometry1 = new THREE.TorusGeometry( 25, 3.6, 30, 200, 6.3);
+    let sateliteGeometry2 = new THREE.TorusGeometry( 25, 2.6, 30, 200, 6.3);
+    let sateliteGeometry3 = new THREE.TorusGeometry( 25, 1.6, 30, 200, 6.3);
+    let sateliteGeometry4 = new THREE.TorusGeometry( 25, 0.6, 30, 200, 6.3);
       // from THREE.js examples
       function generateSprite() {
 
@@ -74,7 +76,7 @@ $(document).ready(function () {
 
     }
 
-    let materialSprite = new THREE.PointCloudMaterial({
+    let materialSprite = new THREE.PointsMaterial({
         color: 0xffffff,
         size: 0.1,
         transparent: true,
@@ -83,11 +85,29 @@ $(document).ready(function () {
     });
 
 
-    let satelite = new THREE.PointCloud(sateliteGeometry, materialSprite);
-    satelite.sortParticles = true;
-    satelite.position.set(0, 0, 0);
-    grups[0].satelites.push(satelite);          // Sol
-    sunGroup.add(satelite);
+    let asteroidField1 = new THREE.Points(sateliteGeometry1, materialSprite);
+    asteroidField1.sortParticles = true;
+    asteroidField1.position.set(0, 0, 0);
+    grups[0].satelites.push(asteroidField1);          // Sol
+    sunGroup.add(asteroidField1);
+
+    let asteroidField2 = new THREE.Points(sateliteGeometry2, materialSprite);
+    asteroidField2.sortParticles = true;
+    asteroidField2.position.set(0,0,0);
+    grups[0].satelites.push(asteroidField2);
+    sunGroup.add(asteroidField2);
+
+    let asteroidField3 = new THREE.Points(sateliteGeometry3, materialSprite);
+    asteroidField3.sortParticles = true;
+    asteroidField3.position.set(0,0,0);
+    grups[0].satelites.push(asteroidField3);
+    sunGroup.add(asteroidField3);
+
+    let asteroidField4 = new THREE.Points(sateliteGeometry4, materialSprite);
+    asteroidField4.sortParticles = true;
+    asteroidField4.position.set(0,0,0);
+    grups[0].satelites.push(asteroidField4);
+    sunGroup.add(asteroidField4);
 
 
 
